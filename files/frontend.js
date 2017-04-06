@@ -119,9 +119,31 @@ function setupPicker () {
   var input = document.getElementById("picker-input");
   var preview = document.getElementById("picker-preview");
   var blue = document.getElementById("blueColor");
+  var red = document.getElementById("redColor");
+  var yellow = document.getElementById("yellowColor");
 
   blue.onclick = function() {
     var value = "#3f6e87";
+    var color = hexToRgb(value);
+
+    if (color) {
+      MY_COLOR = color;
+      preview.style.backgroundColor = value;
+    }
+  }
+
+  red.onclick = function() {
+    var value = "#8e225c";
+    var color = hexToRgb(value);
+
+    if (color) {
+      MY_COLOR = color;
+      preview.style.backgroundColor = value;
+    }
+  }
+
+  yellow.onclick = function() {
+    var value = "#e1c94b";
     var color = hexToRgb(value);
 
     if (color) {

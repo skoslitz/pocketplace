@@ -1,5 +1,96 @@
 package main
 
 const (
-	indexHtml = "<html>\n  <head>\n    <title>pocketplace</title>\n    <style>\n      body {\n        margin: 0;\n      }\n\n      #canvas {\n        transform-origin: 0 0;\n        image-rendering: pixelated;\n        cursor: crosshair;\n        display: none;\n      }\n\n      #loading {\n        display: block;\n      }\n\n      #picker {\n        position: fixed;\n        width: 100px;\n        top: 0;\n        left: 50%;\n        margin-left: -50px;\n        display: none;\n      }\n\n      #picker input {\n        box-sizing: border-box;\n        padding-right: 20px;\n        width: 100%;\n      }\n\n      #picker div {\n        box-sizing: border-box;\n        display: inline-block;\n        height: 19px;\n        position: absolute;\n        right: 1px;\n        top: 1px;\n        width: 19px;\n      }\n\n      #cooldown {\n        background-color: black;\n        color: white;\n        display: none;\n        font-size: 2em;\n        position: fixed;\n        right: 0;\n        top: 0;\n      }\n    </style>\n    <script src=\"/options.js\"></script>\n    <script src=\"/frontend.js\"></script>\n  </head>\n  <body>\n    <div id=\"loading\">Loading ...</div>\n    <canvas id=\"canvas\"></canvas>\n    <div id=\"picker\">\n      <input id=\"picker-input\" type=\"text\" name=\"color\" placeholder=\"color\">\n      <div id=\"picker-preview\"></div>\n    </div>\n    <div id=\"cooldown\"></div>\n  </body>\n</html>\n"
+	indexHtml = `<html>
+  <head>
+    <title>pocketplace</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      #canvas {
+        transform-origin: 0 0;
+        image-rendering: pixelated;
+        cursor: crosshair;
+        display: none;
+      }
+
+      #loading {
+        display: block;
+      }
+
+      #picker {
+        position: fixed;
+        width: 100px;
+        top: 10px;
+        left: 50%;
+        margin-left: -50px;
+        display: none;
+      }
+
+      #blueColor {
+        position: fixed;
+        top: 10px;
+        left: 10%;
+        margin-left: -10px;
+      }
+
+      #redColor {
+        position: fixed;
+        top: 10px;
+        left: 20%;
+        margin-left: -10px;
+      }
+
+      #yellowColor {
+        position: fixed;
+        top: 10px;
+        left: 25%;
+        margin-left: -10px;
+      }
+
+      #picker input {
+        box-sizing: border-box;
+        padding-right: 20px;
+        width: 100%;
+      }
+
+      #picker div {
+        box-sizing: border-box;
+        display: inline-block;
+        height: 19px;
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        width: 19px;
+      }
+
+      #cooldown {
+        background-color: black;
+        color: white;
+        display: none;
+        font-size: 2em;
+        position: fixed;
+        right: 0;
+        top: 0;
+      }
+    </style>
+    <script src="/options.js"></script>
+    <script src="/frontend.js"></script>
+  </head>
+  <body>
+    <div id="loading">Loading ...</div>
+    <canvas id="canvas"></canvas>
+    <button id="blueColor">BLAU</button>
+    <button id="redColor">ROT</button>
+    <button id="yellowColor">GELB</button>
+    <div id="picker">
+      <input id="picker-input" type="text" name="color" placeholder="color">
+      <div id="picker-preview"></div>
+    </div>
+    <div id="cooldown"></div>
+  </body>
+</html>
+`
 )
