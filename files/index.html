@@ -20,10 +20,17 @@
       #picker {
         position: fixed;
         width: 100px;
-        top: 0;
+        top: 10px;
         left: 50%;
         margin-left: -50px;
         display: none;
+      }
+
+      #blueColor {
+        position: fixed;
+        top: 10px;
+        left: 10%;
+        margin-left: -10px;
       }
 
       #picker input {
@@ -58,6 +65,7 @@
   <body>
     <div id="loading">Loading ...</div>
     <canvas id="canvas"></canvas>
+    <button id="blueColor">BLAU</button>
     <div id="picker">
       <input id="picker-input" type="text" name="color" placeholder="color">
       <div id="picker-preview"></div>

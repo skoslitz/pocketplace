@@ -118,6 +118,17 @@ function setupWebsocket () {
 function setupPicker () {
   var input = document.getElementById("picker-input");
   var preview = document.getElementById("picker-preview");
+  var blue = document.getElementById("blueColor");
+
+  blue.onclick = function() {
+    var value = "#3f6e87";
+    var color = hexToRgb(value);
+
+    if (color) {
+      MY_COLOR = color;
+      preview.style.backgroundColor = value;
+    }
+  }
 
   preview.style.backgroundColor = "#FF0000";
   input.value = "#FF0000";
@@ -154,17 +165,17 @@ function setPixel (x, y, r, g, b) {
 
 // Util
 function hexToRgb (hex) {
-	var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+  var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
 
-	hex = hex.replace(shorthandRegex, function(m, r, g, b) {
-		return r + r + g + g + b + b;
-	});
+  hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+    return r + r + g + g + b + b;
+  });
 
-	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
 
-	return result ? {
-		r: parseInt(result[1], 16),
-		g: parseInt(result[2], 16),
-		b: parseInt(result[3], 16)
-	} : null;
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
 }
