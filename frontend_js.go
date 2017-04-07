@@ -2,7 +2,7 @@ package main
 
 const (
 	frontendJs = `// Globals
-var SCALE = 20;
+var SCALE = 30;
 
 var CANVAS = null;
 var LOADING = null;
@@ -11,7 +11,7 @@ var PICKER = null;
 var CONTEXT = null;
 var CONNECTION = null;
 
-var MY_COLOR = {r: 255, g: 0, b: 0};
+var MY_COLOR = {r: 63, g: 110, b: 135};
 var ON_COOLDOWN = false;
 
 // Initialize
@@ -28,8 +28,10 @@ window.onload = function () {
 function setupCanvas () {
   CONTEXT = CANVAS.getContext("2d");
 
+
   CANVAS.width = SIZE;
   CANVAS.height = SIZE;
+
   CANVAS.style.transform = "scale(" + SCALE + ")";
 
   CANVAS.onclick = function (e) {
@@ -124,6 +126,15 @@ function setupPicker () {
   var blue = document.getElementById("blueColor");
   var red = document.getElementById("redColor");
   var yellow = document.getElementById("yellowColor");
+  var orange = document.getElementById("orangeColor");
+  var teal = document.getElementById("tealColor");
+  var pink = document.getElementById("pinkColor");
+  var olive = document.getElementById("oliveColor");
+  var green = document.getElementById("greenColor");
+  var violet = document.getElementById("violetColor");
+  var purple = document.getElementById("purpleColor");
+  var brown = document.getElementById("brownColor");
+  var grey = document.getElementById("greyColor");
 
   blue.onclick = function() {
     var value = "#3f6e87";
@@ -155,8 +166,98 @@ function setupPicker () {
     }
   }
 
-  preview.style.backgroundColor = "#FF0000";
-  input.value = "#FF0000";
+  orange.onclick = function() {
+    var value = "#e06645";
+    var color = hexToRgb(value);
+
+    if (color) {
+      MY_COLOR = color;
+      preview.style.backgroundColor = value;
+    }
+  }
+
+  teal.onclick = function() {
+    var value = "#00937f";
+    var color = hexToRgb(value);
+
+    if (color) {
+      MY_COLOR = color;
+      preview.style.backgroundColor = value;
+    }
+  }
+
+  pink.onclick = function() {
+    var value = "#e55b94";
+    var color = hexToRgb(value);
+
+    if (color) {
+      MY_COLOR = color;
+      preview.style.backgroundColor = value;
+    }
+  }
+
+  olive.onclick = function() {
+    var value = "#9c8c42";
+    var color = hexToRgb(value);
+
+    if (color) {
+      MY_COLOR = color;
+      preview.style.backgroundColor = value;
+    }
+  }
+
+  green.onclick = function() {
+    var value = "#6e873f";
+    var color = hexToRgb(value);
+
+    if (color) {
+      MY_COLOR = color;
+      preview.style.backgroundColor = value;
+    }
+  }
+
+  violet.onclick = function() {
+    var value = "#633e97";
+    var color = hexToRgb(value);
+
+    if (color) {
+      MY_COLOR = color;
+      preview.style.backgroundColor = value;
+    }
+  }
+
+  purple.onclick = function() {
+    var value = "#A333C8";
+    var color = hexToRgb(value);
+
+    if (color) {
+      MY_COLOR = color;
+      preview.style.backgroundColor = value;
+    }
+  }
+
+  brown.onclick = function() {
+    var value = "#A5673F";
+    var color = hexToRgb(value);
+
+    if (color) {
+      MY_COLOR = color;
+      preview.style.backgroundColor = value;
+    }
+  }
+
+  grey.onclick = function() {
+    var value = "#3b3a39";
+    var color = hexToRgb(value);
+
+    if (color) {
+      MY_COLOR = color;
+      preview.style.backgroundColor = value;
+    }
+  }
+
+  preview.style.backgroundColor = "#3f6e87";
+  input.value = "#3f6e87";
 
   input.onchange = function (e) {
     var value = e.target.value;
